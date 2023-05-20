@@ -1,31 +1,25 @@
 ﻿using System;
 using Interfaces;
 using UnityEngine;
-using Weapons;
 
 namespace Enemy
 {
     public class EnemyUnit : MonoBehaviour, IDamagable
     {
         [SerializeField] private float _health;
-        [SerializeField] private WeaponHandler _weaponHandler;
         [SerializeField] private Transform _playerTransform;
 
+        public event Action<EnemyUnit> OnEnemyKilled;
+        
         private float _currentHealth;
+        private int _moveIndex;
 
+        public bool CanBeDamaged => true;
         private void Start()
         {
             _currentHealth = _health;
         }
 
-        private void Update()
-        {
-            var dirToPlayer = (_playerTransform.position - transform.position).normalized;
-            Quaternion desiredRot = Quaternion.LookRotation(Vector3.up, dirToPlayer);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRot,500);
-        }
-
-        public bool CanBeDamaged => true;
         public void GetDamaged(float amount)
         {
             _currentHealth -= amount;
@@ -35,6 +29,7 @@ namespace Enemy
 
         private void Die()
         {
+            OnEnemyKilled?.Invoke(this);
            Destroy(this.gameObject);
         }
     }
