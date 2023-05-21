@@ -4,7 +4,15 @@ using UnityEngine;
 
 namespace StageSystem
 {
-    public class StageChangeSingal {}
+    public class StageChangeSingal
+    {
+        public int StageIndex { get; private set; }
+
+        public StageChangeSingal(int stageIndex)
+        {
+            StageIndex = stageIndex;
+        }
+    }
     
     public class StageSystem : MonoBehaviour
     {
@@ -24,7 +32,7 @@ namespace StageSystem
         {
             DisableAllStages();
             SubscribeToStageClear();
-            MessageBroker.Default.Publish(new StageChangeSingal());
+            MessageBroker.Default.Publish(new StageChangeSingal(0));
         }
 
         private void OnDisable()
@@ -35,15 +43,13 @@ namespace StageSystem
         private void SubscribeToStageClear()
         {
             foreach (var stage in _stages)
-                stage.OnStageClear += () => MessageBroker.Default.Publish(new StageChangeSingal());
-            
-            Debug.Log("kek");
+                stage.OnStageClear += (index) => MessageBroker.Default.Publish(new StageChangeSingal(index));
         }
         
         private void UnSubscribeFromStageClear()
         {
             foreach (var stage in _stages)
-                stage.OnStageClear -= () => MessageBroker.Default.Publish(new StageChangeSingal());
+                stage.OnStageClear -= (index) => MessageBroker.Default.Publish(new StageChangeSingal(index));
         }
 
         private void UpdateActiveStage(int railIndex)

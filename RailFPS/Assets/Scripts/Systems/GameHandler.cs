@@ -24,14 +24,27 @@ namespace StageSystem
     
     public class GameHandler : MonoBehaviour
     {
+        public static GameHandler Instance;
+
+        [SerializeField] private int _endStage;
         [SerializeField] private GameState _state;
+
+        public GameState State => _state;
+
 
         private void Awake()
         {
+            Instance = this;
+            
             MessageBroker.Default.Receive<GameStateSignal>()
                 .Subscribe(signal => UpdateGameState(signal.NewState));
+
+            MessageBroker.Default.Receive<StageChangeSingal>()
+                .Where(signal => signal.StageIndex == _endStage)
+                .Subscribe(_ => MessageBroker.Default.Publish(new GameStateSignal(GameState.Win)))
+                .AddTo(gameObject);
             
-            UpdateGameState(_state);
+            UpdateGameState(State);
         }
 
         private void UpdateGameState(GameState signalNewState)

@@ -33,7 +33,7 @@ namespace Player
             if(_movePoints.Count <= 0)
                 return;
 
-            if(_pointIndex > _movePoints.Count)
+            if(_pointIndex > _movePoints.Count - 1)
                 return;
             
             var nextPoint = _movePoints[_pointIndex];

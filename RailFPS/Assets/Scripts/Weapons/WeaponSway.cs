@@ -1,3 +1,4 @@
+using StageSystem;
 using UnityEngine;
 
 public class WeaponSway : MonoBehaviour
@@ -8,6 +9,9 @@ public class WeaponSway : MonoBehaviour
 
     private void Update()
     {
+        if(GameHandler.Instance.State != GameState.Playing)
+            return;
+        
         float mouseX = Input.GetAxisRaw("Mouse X") * _multiplier;
         float mouseY = Input.GetAxisRaw("Mouse Y") * _multiplier;
 

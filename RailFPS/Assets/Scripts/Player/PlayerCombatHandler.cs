@@ -2,6 +2,7 @@
 using DG.Tweening;
 using Interfaces;
 using Sirenix.OdinInspector;
+using StageSystem;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -50,6 +51,9 @@ namespace Player
         
         private void Update()
         {
+            if(GameHandler.Instance.State != GameState.Playing)
+                return;
+            
             if (Input.GetMouseButton(0) && Time.time >= _nextTimeToFire)
             {
                 Shoot();
@@ -86,12 +90,10 @@ namespace Player
             if (Physics.Raycast(ray.origin, ray.direction + GetRandomSpread(), out RaycastHit hit, _range))
             {
                 if (hit.collider.TryGetComponent(out IDamagable damagable) && damagable.CanBeDamaged)
-                {
-                    _muzzleParticle.Play();
                     damagable.GetDamaged(_damage);
-                }
             }
 
+            _muzzleParticle.Play();
             PlayRandomShotSound();
             _gunPoint.DOShakePosition(_shakeTime, _shakeStrength);
             _nextTimeToFire = Time.time + 1f / _rateOfFire;

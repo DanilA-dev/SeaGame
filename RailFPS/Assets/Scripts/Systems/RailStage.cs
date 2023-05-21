@@ -11,7 +11,7 @@ namespace StageSystem
         [SerializeField] private bool _isClear;
         [SerializeField] private List<BaseEnemy> _enemyUnits;
 
-        public event Action OnStageClear;
+        public event Action<int> OnStageClear;
                 
         public int Index => _index;
 
@@ -38,7 +38,7 @@ namespace StageSystem
             if (_enemyUnits.Count == 0)
             {
                 _isClear = true;
-                OnStageClear?.Invoke();
+                OnStageClear?.Invoke(_index);
             }
         }
     }

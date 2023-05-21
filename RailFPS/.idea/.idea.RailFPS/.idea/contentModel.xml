@@ -21,6 +21,7 @@
             </e>
           </e>
           <e p="Blowfish" t="Include" />
+          <e p="Chest" t="Include" />
           <e p="Dolphin" t="Include" />
           <e p="Fantasy Adventure Environment" t="Include">
             <e p="Changelog.txt" t="Include" />
@@ -139,6 +140,7 @@
             </e>
           </e>
           <e p="Sword" t="Include" />
+          <e p="UnderWater Props" t="Include" />
         </e>
         <e p="Audio" t="Include" />
         <e p="Materials" t="Include" />
@@ -461,7 +463,9 @@
           <e p="Enemies" t="Include" />
         </e>
         <e p="Resources" t="Include" />
-        <e p="Scenes" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="MainMenu" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="Enemy" t="Include">
             <e p="BaseEnemy.cs" t="Include" />

@@ -45,6 +45,7 @@ namespace Enemy
         public void Init(Transform player)
         {
             _player = player;
+            _currentHealth = _health;
             _audioSource = GetComponent<AudioSource>();
             _simpleFsm = new SimpleFSM();
 
@@ -78,7 +79,7 @@ namespace Enemy
             _currentHealth -= amount;
             transform.DOShakeScale(_shakeTime, _shakeStregth);
             _audioSource.PlayOneShot(_dmgClip);
-            if (_currentHealth <= 0)
+            if(_currentHealth <= 0)
                 Die();
         }
 

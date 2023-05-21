@@ -496,8 +496,8 @@ MonoBehaviour:
   _shakeTime: 0.25
   _damageParticle: {fileID: 5989268360893792185}
   _moveSpeed: 10
-  _health: 5
-  _attackDamage: 10
+  _health: 10
+  _attackDamage: 20
   _rotateSpeed: 500
   _stopDistance: 2
   _appearPoints: []
