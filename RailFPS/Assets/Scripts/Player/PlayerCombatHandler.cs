@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using Interfaces;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -24,18 +25,24 @@ namespace Player
         [Header("Particles")]
         [SerializeField] private ParticleSystem _muzzleParticle;
 
+        [Header("Sounds")]
+        [SerializeField] private List<AudioClip> _gunShotsClips;
+        [SerializeField] private AudioClip _reloadClip;
+
         private Animator _animator;
         private Camera _cam;
         private Vector3 _mousePoint;
         private float _nextTimeToFire;
         private float _currentReloadTime;
         private int _currentAmmoCount;
+        private AudioSource _audioSource;
 
         private readonly int _reloadHash = Animator.StringToHash("Reload");
 
         public void Init(Animator animator)
         {
             _cam = Camera.main;
+            _audioSource = GetComponent<AudioSource>();
             _animator = animator;
             _currentAmmoCount = _ammoCount;
             _currentReloadTime = _reloadTime;
@@ -56,6 +63,7 @@ namespace Player
                 if (!_isReloading)
                 {
                     _isReloading = true;
+                    PlayReloadSound();
                     _animator.SetTrigger(_reloadHash);
                 }
                 if (_currentReloadTime > 0)
@@ -84,7 +92,7 @@ namespace Player
                 }
             }
 
-
+            PlayRandomShotSound();
             _gunPoint.DOShakePosition(_shakeTime, _shakeStrength);
             _nextTimeToFire = Time.time + 1f / _rateOfFire;
             _currentAmmoCount--;
@@ -95,6 +103,17 @@ namespace Player
         {
             return new Vector3(Random.Range(_minSpread.x, _maxSpread.x),
                 Random.Range(_minSpread.y, _maxSpread.y), Random.Range(_minSpread.z, _maxSpread.z));
+        }
+
+        private void PlayRandomShotSound()
+        {
+            int index = Random.Range(0, _gunShotsClips.Count);
+            _audioSource.PlayOneShot(_gunShotsClips[index]);
+        }
+
+        private void PlayReloadSound()
+        {
+            _audioSource.PlayOneShot(_reloadClip);
         }
     }
 }

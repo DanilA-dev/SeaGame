@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class Shark : BaseEnemy
+    public class MeleeFish : BaseEnemy
     {
         [Header("MeleeState")] 
         [SerializeField] private LayerMask _playerLayer;

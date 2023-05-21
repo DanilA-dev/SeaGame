@@ -35,13 +35,15 @@ namespace StageSystem
         private void SubscribeToStageClear()
         {
             foreach (var stage in _stages)
-                stage.OnStageClear += () => MessageBroker.Default.Publish(new StageChangeSingal());;
+                stage.OnStageClear += () => MessageBroker.Default.Publish(new StageChangeSingal());
+            
+            Debug.Log("kek");
         }
         
         private void UnSubscribeFromStageClear()
         {
             foreach (var stage in _stages)
-                stage.OnStageClear -= () => MessageBroker.Default.Publish(new StageChangeSingal());;
+                stage.OnStageClear -= () => MessageBroker.Default.Publish(new StageChangeSingal());
         }
 
         private void UpdateActiveStage(int railIndex)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using Interfaces;
 using Misc;
 using UnityEngine;
@@ -10,6 +11,10 @@ namespace Enemy
 {
     public abstract class BaseEnemy : MonoBehaviour, IDamagable
     {
+        [Header("On Damage")]
+        [SerializeField] private float _shakeStregth;
+        [SerializeField] private float _shakeTime;
+        [SerializeField] private ParticleSystem _damageParticle;
         [Header("Stats")]
         [SerializeField] protected float _moveSpeed;
         [SerializeField] protected float _health;
@@ -22,6 +27,10 @@ namespace Enemy
         [Header("RoamState")]
         [SerializeField] private float _roamTime;
         [SerializeField] private List<EnemyMovePoint> _roamPoints;
+        [SerializeField] private AudioClip _dmgClip;
+        [SerializeField] private AudioClip _deathClip;
+        
+         private AudioSource _audioSource;
 
         protected Transform _player;
         private float _currentHealth;
@@ -36,7 +45,7 @@ namespace Enemy
         public void Init(Transform player)
         {
             _player = player;
-            
+            _audioSource = GetComponent<AudioSource>();
             _simpleFsm = new SimpleFSM();
 
             _startState = new EnemyScreenAppearState(_simpleFsm, _moveSpeed, transform,
@@ -67,14 +76,18 @@ namespace Enemy
         public void GetDamaged(float amount)
         {
             _currentHealth -= amount;
+            transform.DOShakeScale(_shakeTime, _shakeStregth);
+            _audioSource.PlayOneShot(_dmgClip);
             if (_currentHealth <= 0)
                 Die();
         }
 
-        private void Die()
+        protected virtual void Die()
         {
             OnEnemyKilled?.Invoke(this);
-           Destroy(this.gameObject);
+            _damageParticle.Play();
+            _audioSource.PlayOneShot(_deathClip);
+            gameObject.SetActive(false);
         }
         
     }

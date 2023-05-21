@@ -38,7 +38,7 @@ namespace StateMachine.EnemyStates
         public override void Enter()
         {
             base.Enter();
-            _attackTime = 0.5f;
+            _attackTime = 0.01f;
            
         }
 
