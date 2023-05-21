@@ -1,17 +1,21 @@
 ﻿using System.Collections.Generic;
-using Player;
 using UniRx;
 using UnityEngine;
 
 namespace StageSystem
 {
+    public class StageChangeSingal {}
+    
     public class StageSystem : MonoBehaviour
     {
-        [SerializeField] private PlayerRailMovement _playerRailMovement;
+        [SerializeField] private Transform _player;
         [SerializeField] private List<RailStage> _stages;
 
         private void Awake()
         {
+            if(_stages.Count > 0)
+                _stages.ForEach(s => s.Init(_player));
+            
             MessageBroker.Default.Receive<RaillReachSignal>()
                 .Subscribe(signal => UpdateActiveStage(signal.Index)).AddTo(gameObject);
         }
@@ -20,7 +24,7 @@ namespace StageSystem
         {
             DisableAllStages();
             SubscribeToStageClear();
-            _playerRailMovement.MoveToNextPoint();
+            MessageBroker.Default.Publish(new StageChangeSingal());
         }
 
         private void OnDisable()
@@ -31,13 +35,13 @@ namespace StageSystem
         private void SubscribeToStageClear()
         {
             foreach (var stage in _stages)
-                stage.OnStageClear += () => _playerRailMovement.MoveToNextPoint();
+                stage.OnStageClear += () => MessageBroker.Default.Publish(new StageChangeSingal());;
         }
         
         private void UnSubscribeFromStageClear()
         {
             foreach (var stage in _stages)
-                stage.OnStageClear -= () => _playerRailMovement.MoveToNextPoint();
+                stage.OnStageClear -= () => MessageBroker.Default.Publish(new StageChangeSingal());;
         }
 
         private void UpdateActiveStage(int railIndex)

@@ -6,6 +6,137 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Animations" t="Include">
+          <e p="Fish" t="Include" />
+          <e p="Player" t="Include" />
+        </e>
+        <e p="Assets" t="Include">
+          <e p="Alstra Infinite" t="Include">
+            <e p="Fish - PolyPack" t="Include">
+              <e p="Materials" t="Include" />
+              <e p="Models" t="Include" />
+              <e p="Prefabs" t="Include" />
+              <e p="Scene" t="Include" />
+              <e p="Texture" t="Include" />
+            </e>
+          </e>
+          <e p="Blowfish" t="Include" />
+          <e p="Fantasy Adventure Environment" t="Include">
+            <e p="Changelog.txt" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="CliffAppearanceInspector.cs" t="Include" />
+              <e p="FAE_Core.cs" t="Include" />
+              <e p="FoliageShaderGUI.cs" t="Include" />
+              <e p="GrassShaderGUI.cs" t="Include" />
+              <e p="GUIHelper.cs" t="Include" />
+              <e p="HelpWindow.cs" t="Include" />
+              <e p="PigmentMapGeneratorInspector.cs" t="Include" />
+              <e p="sc.fae.editor.asmdef" t="Include" />
+              <e p="TreeBranchShaderGUI.cs" t="Include" />
+              <e p="TreeTrunkShaderGUI.cs" t="Include" />
+              <e p="WindControllerInspector.cs" t="Include" />
+            </e>
+            <e p="Materials" t="Include">
+              <e p="Effects" t="Include">
+                <e p="Textures" t="Include" />
+              </e>
+              <e p="Objects" t="Include" />
+              <e p="Rocks" t="Include">
+                <e p="Textures" t="Include" />
+              </e>
+              <e p="Skybox" t="Include" />
+              <e p="Trees" t="Include">
+                <e p="Billboards" t="Include" />
+                <e p="Textures" t="Include">
+                  <e p="Birch" t="Include" />
+                  <e p="Palm" t="Include" />
+                  <e p="Pine" t="Include" />
+                  <e p="Spruce" t="Include" />
+                  <e p="Tree" t="Include" />
+                  <e p="Willow" t="Include" />
+                </e>
+              </e>
+              <e p="Vegetation" t="Include">
+                <e p="Textures" t="Include" />
+              </e>
+            </e>
+            <e p="Models" t="Include">
+              <e p="Effects" t="Include" />
+              <e p="Objects" t="Include" />
+              <e p="Rocks" t="Include" />
+              <e p="Trees" t="Include" />
+              <e p="Vegetation" t="Include" />
+            </e>
+            <e p="PostProcessingAssets" t="Include">
+              <e p="readme.txt" t="Include" />
+            </e>
+            <e p="Prefabs" t="Include">
+              <e p="Effects" t="Include" />
+              <e p="Objects" t="Include" />
+              <e p="Rocks" t="Include" />
+              <e p="Trees" t="Include" />
+              <e p="Vegetation" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="CliffAppearance.cs" t="Include" />
+              <e p="FoliageBender.cs" t="Include" />
+              <e p="PigmentMapGenerator.cs" t="Include" />
+              <e p="sc.fae.runtime.asmdef" t="Include" />
+              <e p="TerrainUVUtil.cs" t="Include" />
+              <e p="VegetationStudioPro" t="Include">
+                <e p="FAEFoliageShaderController.cs" t="Include" />
+                <e p="FAEGrassShaderController.cs" t="Include" />
+                <e p="FAETreeShaderController.cs" t="Include" />
+              </e>
+              <e p="WindController.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="FAE_Cliff.shader" t="Include" />
+              <e p="FAE_Cliff_Coverage.shader" t="Include" />
+              <e p="FAE_FogSheet.shader" t="Include" />
+              <e p="FAE_Foliage.shader" t="Include" />
+              <e p="FAE_Grass.shader" t="Include" />
+              <e p="FAE_Sunshaft.shader" t="Include" />
+              <e p="FAE_SunshaftParticle.shader" t="Include" />
+              <e p="FAE_TreeBillboard.shader" t="Include" />
+              <e p="FAE_TreeBranch.shader" t="Include" />
+              <e p="FAE_TreeTrunk.shader" t="Include" />
+              <e p="FAE_Water.shader" t="Include" />
+              <e p="PigmentMapComposite.shader" t="Include" />
+              <e p="URP" t="Include" />
+              <e p="VS_InstancedIndirect.cginc" t="Include" />
+            </e>
+            <e p="Terrain" t="Include">
+              <e p="Layers" t="Include" />
+              <e p="Textures" t="Include">
+                <e p="TerrainDirt" t="Include" />
+                <e p="TerrainForestFloor" t="Include" />
+                <e p="TerrainForestFloor_Birch" t="Include" />
+                <e p="TerrainGrass" t="Include" />
+                <e p="TerrainRock" t="Include" />
+                <e p="TerrainSand" t="Include" />
+                <e p="TerrainSnow" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Low Poly Weapons VOL.1" t="Include">
+            <e p="Models" t="Include" />
+            <e p="Prefabs" t="Include" />
+          </e>
+          <e p="SimpleLowPolyNature" t="Include">
+            <e p="Materials" t="Include" />
+            <e p="Models" t="Include" />
+            <e p="Prefabs" t="Include" />
+            <e p="readme.txt" t="Include" />
+            <e p="Scenes" t="Include">
+              <e p="PrefabsScene" t="Include" />
+              <e p="SceneDemoAsset" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="SimpleWater.shader" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Materials" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
@@ -322,20 +453,38 @@
             </e>
           </e>
         </e>
-        <e p="Prefabs" t="Include" />
+        <e p="Prefabs" t="Include">
+          <e p="Enemies" t="Include" />
+        </e>
         <e p="Resources" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Enemy" t="Include">
-            <e p="EnemyStartMover.cs" t="Include" />
-            <e p="EnemyUnit.cs" t="Include" />
+            <e p="BaseEnemy.cs" t="Include" />
+            <e p="EnemyType" t="Include">
+              <e p="BlowFish.cs" t="Include" />
+              <e p="Shark.cs" t="Include" />
+            </e>
           </e>
           <e p="Interfaces" t="Include">
             <e p="IDamagable.cs" t="Include" />
           </e>
+          <e p="Misc" t="Include">
+            <e p="EnemyMovePoint.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
+            <e p="PlayerBase.cs" t="Include" />
             <e p="PlayerCombatHandler.cs" t="Include" />
             <e p="PlayerRailMovement.cs" t="Include" />
+          </e>
+          <e p="StateMachine" t="Include">
+            <e p="BaseState.cs" t="Include" />
+            <e p="EnemyStates" t="Include">
+              <e p="EnemyMeleeState.cs" t="Include" />
+              <e p="EnemyScreenAppearState.cs" t="Include" />
+              <e p="ScreenRoamState.cs" t="Include" />
+            </e>
+            <e p="FSM.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
             <e p="RaillPoint.cs" t="Include" />
@@ -348,6 +497,7 @@
             <e p="ProjecttileRangeGun.cs" t="Include" />
             <e p="RaycastRangeGun.cs" t="Include" />
             <e p="WeaponHandler.cs" t="Include" />
+            <e p="WeaponSway.cs" t="Include" />
           </e>
         </e>
         <e p="Settings" t="Include" />
@@ -7634,6 +7784,8 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="PPv2URPConverters.csproj" t="IncludeRecursive" />
       <e p="RailFPS.sln" t="IncludeFlat" />
+      <e p="sc.fae.editor.csproj" t="IncludeRecursive" />
+      <e p="sc.fae.runtime.csproj" t="IncludeRecursive" />
       <e p="SeparateAssembly.csproj" t="IncludeRecursive" />
       <e p="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />

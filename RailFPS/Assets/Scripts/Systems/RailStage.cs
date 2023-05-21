@@ -9,31 +9,37 @@ namespace StageSystem
     {
         [SerializeField] private int _index;
         [SerializeField] private bool _isClear;
-        [SerializeField] private List<EnemyUnit> _enemyUnits;
+        [SerializeField] private List<BaseEnemy> _enemyUnits;
 
         public event Action OnStageClear;
                 
         public int Index => _index;
 
-        private void Awake()
+        public void Init(Transform player)
         {
+            if(_enemyUnits.Count > 0)
+                _enemyUnits.ForEach(e => e.Init(player));
+            
             foreach (var enemy in _enemyUnits)
                 enemy.OnEnemyKilled += UpdateEnemyList;
         }
-
+        
         private void OnDestroy()
         {
             foreach (var enemy in _enemyUnits)
                 enemy.OnEnemyKilled -= UpdateEnemyList;
         }
 
-        private void UpdateEnemyList(EnemyUnit killedEnemy)
+        private void UpdateEnemyList(BaseEnemy killedEnemy)
         {
             if (_enemyUnits.Contains(killedEnemy))
                 _enemyUnits.Remove(killedEnemy);
-            
-            if(_enemyUnits.Count == 0)
+
+            if (_enemyUnits.Count == 0)
+            {
+                _isClear = true;
                 OnStageClear?.Invoke();
+            }
         }
     }
 }
