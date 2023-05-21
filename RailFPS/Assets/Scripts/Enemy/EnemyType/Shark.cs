@@ -6,6 +6,7 @@ namespace Enemy
     public class Shark : BaseEnemy
     {
         [Header("MeleeState")] 
+        [SerializeField] private LayerMask _playerLayer;
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private float _attackRadius;
         [SerializeField] private float _additionalSpeed;
@@ -16,7 +17,8 @@ namespace Enemy
         protected void Start()
         {
             _meleeState = new EnemyMeleeState(_simpleFsm, transform, _player,_attackDamage,_moveSpeed,
-                _additionalSpeed, _attackPoint, _attackRadius,_attackStopDistance, _rotateSpeed);
+                _additionalSpeed, _attackPoint, _attackRadius,_attackStopDistance, _rotateSpeed,
+                _playerLayer);
             
             _simpleFsm.AddState(_meleeState);
             _roamState.OnStateExit += () => _simpleFsm.ChangeState(_meleeState);

@@ -21,7 +21,7 @@ namespace StateMachine.EnemyStates
         public EnemyMeleeState(SimpleFSM simpleFsm, Transform myTransform, Transform playerTransform,
             float damage, float moveSpeed, float additionalSpeed,
             Transform attackPoint, float attackRadius,
-            float attackStopDistance, float rotateSpeed) : base(simpleFsm)
+            float attackStopDistance, float rotateSpeed, LayerMask playerLayer) : base(simpleFsm)
         {
             _myTransform = myTransform;
             _playerTransform = playerTransform;
@@ -32,6 +32,7 @@ namespace StateMachine.EnemyStates
             _additionalSpeed = additionalSpeed;
             _attackStopDistance = attackStopDistance;
             _rotateSpeed = rotateSpeed;
+            _playerLayer = playerLayer;
         }
 
         public override void Enter()
@@ -59,7 +60,7 @@ namespace StateMachine.EnemyStates
                 if (_attackTime > 0)
                 {
                     Collider[] colls = new Collider[1];
-                    colls = Physics.OverlapSphere(_attackPoint.position, _attackRadius);
+                    colls = Physics.OverlapSphere(_attackPoint.position, _attackRadius, _playerLayer);
                     if (colls.Length > 0)
                     {
                         foreach (var c in colls)

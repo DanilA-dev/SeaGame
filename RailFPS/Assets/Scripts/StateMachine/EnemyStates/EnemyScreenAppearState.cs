@@ -56,7 +56,6 @@ namespace StateMachine.EnemyStates
 
         public override void Exit()
         {
-            Debug.Log("Exit apeear state");
             _appearMoveIndex = 0;
         }
 

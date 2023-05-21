@@ -33,8 +33,7 @@ namespace StateMachine.EnemyStates
         public override void Enter()
         {
             base.Enter();
-            Debug.Log("Enter roam");
-            _currentRoamTime = _roamTime;
+            _currentRoamTime = 0;
         }
 
         public override void Update()

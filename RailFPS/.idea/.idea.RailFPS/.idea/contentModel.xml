@@ -484,7 +484,7 @@
               <e p="EnemyScreenAppearState.cs" t="Include" />
               <e p="ScreenRoamState.cs" t="Include" />
             </e>
-            <e p="FSM.cs" t="Include" />
+            <e p="SimpleFSM.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
             <e p="RaillPoint.cs" t="Include" />
