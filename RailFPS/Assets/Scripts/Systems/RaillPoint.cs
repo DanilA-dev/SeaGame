@@ -22,6 +22,15 @@ namespace StageSystem
         {
             MessageBroker.Default.Publish(new RaillReachSignal(_index));
         }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(transform.position, 1f);
+            
+            Gizmos.color = Color.green;
+            Gizmos.DrawRay(transform.position, transform.forward * 10);
+        }
     }
 
 }

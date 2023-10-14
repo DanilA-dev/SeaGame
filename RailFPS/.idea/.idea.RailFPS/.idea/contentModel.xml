@@ -3,9 +3,11 @@
   <component name="ContentModelStore">
     <e p="C:\Program Files\Unity\UnityProjects\SeaGame\SeaGame\RailFPS" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="_TerrainAutoUpgrade" t="Include" />
         <e p="Animations" t="Include">
           <e p="Fish" t="Include" />
           <e p="Player" t="Include" />
@@ -20,9 +22,12 @@
               <e p="Texture" t="Include" />
             </e>
           </e>
-          <e p="Blowfish" t="Include" />
-          <e p="Chest" t="Include" />
-          <e p="Dolphin" t="Include" />
+          <e p="Arms" t="Include">
+            <e p="Source" t="Include" />
+            <e p="Textures" t="Include" />
+          </e>
+          <e p="BigBoat" t="Include" />
+          <e p="Dock" t="Include" />
           <e p="Fantasy Adventure Environment" t="Include">
             <e p="Changelog.txt" t="Include" />
             <e p="Editor" t="Include">
@@ -121,28 +126,80 @@
               </e>
             </e>
           </e>
+          <e p="Fishes" t="Include">
+            <e p="BigFuckingFish" t="Include" />
+            <e p="Blowfish" t="Include" />
+            <e p="Crab" t="Include">
+              <e p="Mats" t="Include" />
+            </e>
+            <e p="CrayFish" t="Include">
+              <e p="Mats" t="Include" />
+            </e>
+            <e p="Dolphin" t="Include" />
+            <e p="GoldFish" t="Include">
+              <e p="Mats" t="Include" />
+            </e>
+            <e p="SalmonFish" t="Include">
+              <e p="Mats" t="Include" />
+            </e>
+          </e>
+          <e p="IgniteCoders" t="Include">
+            <e p="Simple Water Shader" t="Include">
+              <e p="Info" t="Include">
+                <e p="Icons" t="Include" />
+                <e p="Scripts" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="ReadmeEditor.cs" t="Include" />
+                  </e>
+                  <e p="Readme.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Prefabs" t="Include" />
+              <e p="Resources" t="Include">
+                <e p="WaterReflection.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Low Poly Weapons VOL.1" t="Include">
             <e p="Models" t="Include" />
             <e p="Prefabs" t="Include" />
           </e>
-          <e p="OneShotFish" t="Include" />
-          <e p="SimpleLowPolyNature" t="Include">
-            <e p="Materials" t="Include" />
-            <e p="Models" t="Include" />
-            <e p="Prefabs" t="Include" />
+          <e p="Stylized Nature Environment" t="Include">
             <e p="readme.txt" t="Include" />
-            <e p="Scenes" t="Include">
-              <e p="PrefabsScene" t="Include" />
-              <e p="SceneDemoAsset" t="Include" />
+            <e p="Terrain" t="Include">
+              <e p="Materials" t="Include" />
             </e>
-            <e p="Shaders" t="Include">
-              <e p="SimpleWater.shader" t="Include" />
-            </e>
+            <e p="Textures" t="Include" />
           </e>
           <e p="Sword" t="Include" />
-          <e p="UnderWater Props" t="Include" />
+          <e p="TreasureChest" t="Include">
+            <e p="Materials" t="Include" />
+            <e p="Source" t="Include" />
+            <e p="Textures" t="Include" />
+          </e>
+          <e p="UnderWater Props" t="Include">
+            <e p="Mats" t="Include" />
+          </e>
+          <e p="Wenrexa UI" t="Include" />
+          <e p="WoodenBoat" t="Include">
+            <e p="Mats" t="Include" />
+          </e>
         </e>
         <e p="Audio" t="Include" />
+        <e p="Fantasy Adventure Environment" t="Include">
+          <e p="_DemoScenes" t="Include">
+            <e p="Source" t="Include">
+              <e p="Materials" t="Include" />
+            </e>
+          </e>
+          <e p="PostProcessingAssets" t="Include" />
+          <e p="Shaders" t="Include">
+            <e p="URP" t="Include">
+              <e p="FAE.hlsl" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Fonts" t="Include" />
         <e p="Materials" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
@@ -461,10 +518,13 @@
         </e>
         <e p="Prefabs" t="Include">
           <e p="Enemies" t="Include" />
+          <e p="UI" t="Include" />
+          <e p="VFX" t="Include" />
         </e>
         <e p="Resources" t="Include" />
         <e p="Scenes" t="Include">
           <e p="MainMenu" t="Include" />
+          <e p="SampleScene" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Enemy" t="Include">
@@ -504,11 +564,8 @@
             <e p="PlayerUI.cs" t="Include" />
           </e>
           <e p="Weapons" t="Include">
-            <e p="BaseWeapon.cs" t="Include" />
             <e p="Bullet.cs" t="Include" />
-            <e p="ProjecttileRangeGun.cs" t="Include" />
-            <e p="RaycastRangeGun.cs" t="Include" />
-            <e p="WeaponHandler.cs" t="Include" />
+            <e p="GunStats.cs" t="Include" />
             <e p="WeaponSway.cs" t="Include" />
           </e>
         </e>
@@ -551,6 +608,21 @@
             <e p="EmojiOne.json" t="Include" />
           </e>
         </e>
+        <e p="TWD" t="Include">
+          <e p="FreeButtonSet" t="Include">
+            <e p="Fonts" t="Include" />
+            <e p="Textures" t="Include">
+              <e p="buttons" t="Include" />
+              <e p="Icons" t="Include">
+                <e p="128x128" t="Include" />
+                <e p="256x256" t="Include" />
+                <e p="32x32" t="Include" />
+                <e p="64x64" t="Include" />
+              </e>
+              <e p="Other" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="Cinemachine.csproj" t="IncludeRecursive" />
       <e p="com.unity.cinemachine.editor.csproj" t="IncludeRecursive" />
@@ -559,6 +631,164 @@
       <e p="DocCodeExamples.csproj" t="IncludeRecursive" />
       <e p="Library" t="Include">
         <e p="PackageCache" t="Include">
+          <e p="com.unity.animation.rigging@1.1.1" t="Include">
+            <e p="Editor" t="Include">
+              <e p="AnimationRig" t="Include">
+                <e p="Constraints" t="Include">
+                  <e p="BlendConstraintEditor.cs" t="Include" />
+                  <e p="ChainIKConstraintEditor.cs" t="Include" />
+                  <e p="DampedTransformEditor.cs" t="Include" />
+                  <e p="MultiAimConstraintEditor.cs" t="Include" />
+                  <e p="MultiParentConstraintEditor.cs" t="Include" />
+                  <e p="MultiPositionConstraintEditor.cs" t="Include" />
+                  <e p="MultiReferentialConstraintEditor.cs" t="Include" />
+                  <e p="MultiRotationConstraintEditor.cs" t="Include" />
+                  <e p="OverrideTransformEditor.cs" t="Include" />
+                  <e p="TwistChainConstraintEditor.cs" t="Include" />
+                  <e p="TwistCorrectionEditor.cs" t="Include" />
+                  <e p="TwoBoneIKConstraintEditor.cs" t="Include" />
+                </e>
+                <e p="RigBuilderEditor.cs" t="Include" />
+                <e p="RigEditor.cs" t="Include" />
+                <e p="RigLayerDrawer.cs" t="Include" />
+                <e p="RigTransformEditor.cs" t="Include" />
+                <e p="WeightedTransformArrayDrawer.cs" t="Include" />
+                <e p="WeightedTransformDrawer.cs" t="Include" />
+              </e>
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="Attributes" t="Include">
+                <e p="BakeParametersAttribute.cs" t="Include" />
+                <e p="CustomOverlayAttribute.cs" t="Include" />
+                <e p="InverseRigConstraintAttribute.cs" t="Include" />
+              </e>
+              <e p="Effectors" t="Include">
+                <e p="IRigEffector.cs" t="Include" />
+                <e p="IRigEffectorOverlay.cs" t="Include" />
+                <e p="RigEffector.cs" t="Include" />
+                <e p="RigEffectorOverlay.cs" t="Include" />
+                <e p="RigEffectorRenderer.cs" t="Include" />
+                <e p="RigEffectorWizard.cs" t="Include" />
+              </e>
+              <e p="Icons" t="Include" />
+              <e p="InverseSolve" t="Include">
+                <e p="AnimationJobs" t="Include">
+                  <e p="MultiAimInverseConstraintJob.cs" t="Include" />
+                  <e p="MultiParentInverseConstraintJob.cs" t="Include" />
+                  <e p="MultiPositionInverseConstraintJob.cs" t="Include" />
+                  <e p="MultiReferentialInverseConstraintJob.cs" t="Include" />
+                  <e p="MultiRotationInverseConstraintJob.cs" t="Include" />
+                  <e p="TwistChainInverseConstraintJob.cs" t="Include" />
+                  <e p="TwoBoneIKInverseConstraintJob.cs" t="Include" />
+                </e>
+                <e p="Constraints" t="Include">
+                  <e p="MultiAimInverseConstraint.cs" t="Include" />
+                  <e p="MultiParentInverseConstraint.cs" t="Include" />
+                  <e p="MultiPositionInverseConstraint.cs" t="Include" />
+                  <e p="MultiReferentialInverseConstraint.cs" t="Include" />
+                  <e p="MultiRotationInverseConstraint.cs" t="Include" />
+                  <e p="TwistChainInverseConstraint.cs" t="Include" />
+                  <e p="TwoBoneIKInverseConstraint.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="BoneHandles.shader" t="Include" />
+                <e p="RigEffector.shader" t="Include" />
+              </e>
+              <e p="Shapes" t="Include" />
+              <e p="Unity.Animation.Rigging.Editor.asmdef" t="Include" />
+              <e p="Utils" t="Include">
+                <e p="AnimationRiggingContextMenus.cs" t="Include" />
+                <e p="AnimationRiggingEditorUtils.cs" t="Include" />
+                <e p="AnimationRiggingMenu.cs" t="Include" />
+                <e p="AnimationWindowUtils.cs" t="Include" />
+                <e p="BakeUtils.cs" t="Include" />
+                <e p="BoneRendererEditor.cs" t="Include" />
+                <e p="BoneRendererUtils.cs" t="Include" />
+                <e p="CommonContent.cs" t="Include" />
+                <e p="EditorCurveBindingUtils.cs" t="Include" />
+                <e p="EditorHelpers.cs" t="Include" />
+                <e p="ExpandChildrenDrawer.cs" t="Include" />
+                <e p="FoldoutState.cs" t="Include" />
+                <e p="Preferences.cs" t="Include" />
+                <e p="SceneViewOverlay.cs" t="Include" />
+                <e p="Vector3BoolDrawer.cs" t="Include" />
+              </e>
+            </e>
+            <e p="package.json" t="Include" />
+            <e p="Runtime" t="Include">
+              <e p="AnimationJobs" t="Include">
+                <e p="AnimationJobCache.cs" t="Include" />
+                <e p="BlendConstraintJob.cs" t="Include" />
+                <e p="ChainIKConstraintJob.cs" t="Include" />
+                <e p="DampedTransformJob.cs" t="Include" />
+                <e p="IAnimatableProperty.cs" t="Include" />
+                <e p="IAnimationJobBinder.cs" t="Include" />
+                <e p="IAnimationJobData.cs" t="Include" />
+                <e p="IWeightedAnimationJob.cs" t="Include" />
+                <e p="MultiAimConstraintJob.cs" t="Include" />
+                <e p="MultiParentConstraintJob.cs" t="Include" />
+                <e p="MultiPositionConstraintJob.cs" t="Include" />
+                <e p="MultiReferentialConstraintJob.cs" t="Include" />
+                <e p="MultiRotationConstraintJob.cs" t="Include" />
+                <e p="OverrideTransformJob.cs" t="Include" />
+                <e p="RigSyncSceneToStreamJob.cs" t="Include" />
+                <e p="TransformHandle.cs" t="Include" />
+                <e p="TwistChainConstraintJob.cs" t="Include" />
+                <e p="TwistCorrectionJob.cs" t="Include" />
+                <e p="TwoBoneIKConstraintJob.cs" t="Include" />
+                <e p="WeightedTransformArrayBinder.cs" t="Include" />
+              </e>
+              <e p="AnimationRig" t="Include">
+                <e p="Constraints" t="Include">
+                  <e p="BlendConstraint.cs" t="Include" />
+                  <e p="ChainIKConstraint.cs" t="Include" />
+                  <e p="DampedTransform.cs" t="Include" />
+                  <e p="MultiAimConstraint.cs" t="Include" />
+                  <e p="MultiParentConstraint.cs" t="Include" />
+                  <e p="MultiPositionConstraint.cs" t="Include" />
+                  <e p="MultiReferentialConstraint.cs" t="Include" />
+                  <e p="MultiRotationConstraint.cs" t="Include" />
+                  <e p="OverrideTransform.cs" t="Include" />
+                  <e p="TwistChainConstraint.cs" t="Include" />
+                  <e p="TwistCorrection.cs" t="Include" />
+                  <e p="TwoBoneIKConstraint.cs" t="Include" />
+                </e>
+                <e p="IRigConstraint.cs" t="Include" />
+                <e p="IRigLayer.cs" t="Include" />
+                <e p="OverrideRigConstraint.cs" t="Include" />
+                <e p="OverrideRigLayer.cs" t="Include" />
+                <e p="Rig.cs" t="Include" />
+                <e p="RigBuilder.cs" t="Include" />
+                <e p="RigBuilderUtils.cs" t="Include" />
+                <e p="RigConstraint.cs" t="Include" />
+                <e p="RigLayer.cs" t="Include" />
+                <e p="RigTransform.cs" t="Include" />
+                <e p="RigUtils.cs" t="Include" />
+                <e p="SyncSceneToStreamLayer.cs" t="Include" />
+                <e p="WeightedTransform.cs" t="Include" />
+                <e p="WeightedTransformArray.cs" t="Include" />
+              </e>
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="Attributes" t="Include">
+                <e p="ExpandChildrenAttribute.cs" t="Include" />
+                <e p="SyncSceneToStreamAttribute.cs" t="Include" />
+                <e p="WeightRangeAttribute.cs" t="Include" />
+              </e>
+              <e p="Effectors" t="Include">
+                <e p="IRigEffectorHolder.cs" t="Include" />
+                <e p="RigEffectorData.cs" t="Include" />
+              </e>
+              <e p="Unity.Animation.Rigging.asmdef" t="Include" />
+              <e p="Utils" t="Include">
+                <e p="AffineTransform.cs" t="Include" />
+                <e p="AnimationRuntimeUtils.cs" t="Include" />
+                <e p="BoneRenderer.cs" t="Include" />
+                <e p="ConstraintsUtils.cs" t="Include" />
+                <e p="QuaternionExt.cs" t="Include" />
+                <e p="Vector3Bool.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="com.unity.burst@1.7.3" t="Include">
             <e p="Editor" t="Include">
               <e p="BurstAotCompiler.cs" t="Include" />
@@ -4688,6 +4918,306 @@
             </e>
             <e p="ValidationConfig.json" t="Include" />
           </e>
+          <e p="com.unity.terrain-tools@4.0.5" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Analytics" t="Include">
+                <e p="TerrainToolsAnalytics.cs" t="Include" />
+              </e>
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="Icons" t="Include" />
+              <e p="Importers" t="Include">
+                <e p="TerrainToolsShaderImporter.cs" t="Include" />
+              </e>
+              <e p="SamplesLinkPackageManagerExtension.cs" t="Include" />
+              <e p="TerrainToolbox" t="Include">
+                <e p="Data" t="Include">
+                  <e p="Heightmap.cs" t="Include" />
+                  <e p="TerrainCreationSettings.cs" t="Include" />
+                  <e p="TerrainPalette.cs" t="Include" />
+                  <e p="TerrainSettings.cs" t="Include" />
+                  <e p="TerrainVisualizationSettings.cs" t="Include" />
+                </e>
+                <e p="TerrainGroupInspector.cs" t="Include" />
+                <e p="TerrainToolboxCreateTerrain.cs" t="Include" />
+                <e p="TerrainToolboxLayer.cs" t="Include" />
+                <e p="TerrainToolboxSettings.cs" t="Include" />
+                <e p="TerrainToolboxUtilities.cs" t="Include" />
+                <e p="TerrainToolboxVisualization.cs" t="Include" />
+                <e p="TerrainToolboxWindow.cs" t="Include" />
+                <e p="ToolboxHelper.cs" t="Include" />
+              </e>
+              <e p="TerrainTools" t="Include">
+                <e p="BridgeTool.cs" t="Include" />
+                <e p="BrushControllers" t="Include">
+                  <e p="BaseBrushUIGroup.cs" t="Include" />
+                  <e p="BaseBrushVariator.cs" t="Include" />
+                  <e p="BrushJitterHandler.cs" t="Include" />
+                  <e p="BrushRenderUIGroupUnderCursor.cs" t="Include" />
+                  <e p="BrushRenderWithTerrainUiGroup.cs" t="Include" />
+                  <e p="BrushRotationVariator.cs" t="Include" />
+                  <e p="BrushScatterVariator.cs" t="Include" />
+                  <e p="BrushShortcutHandler.cs" t="Include" />
+                  <e p="BrushShortcutType.cs" t="Include" />
+                  <e p="BrushSizeVariator.cs" t="Include" />
+                  <e p="BrushSpacingVariator.cs" t="Include" />
+                  <e p="BrushStrengthVariator.cs" t="Include" />
+                  <e p="DefaultBrushModifierKeys.cs" t="Include" />
+                  <e p="DefaultBrushSmoother.cs" t="Include" />
+                  <e p="DefaultBrushUIGroup.cs" t="Include" />
+                  <e p="IBrushController.cs" t="Include" />
+                  <e p="IBrushEventHandler.cs" t="Include" />
+                  <e p="IBrushModifierKeyController.cs" t="Include" />
+                  <e p="IBrushRenderUnderCursor.cs" t="Include" />
+                  <e p="IBrushRenderWithTerrain.cs" t="Include" />
+                  <e p="IBrushRotationController.cs" t="Include" />
+                  <e p="IBrushScatterController.cs" t="Include" />
+                  <e p="IBrushSizeController.cs" t="Include" />
+                  <e p="IBrushSmoothController.cs" t="Include" />
+                  <e p="IBrushSpacingController.cs" t="Include" />
+                  <e p="IBrushStrengthController.cs" t="Include" />
+                  <e p="IBrushTerrainCache.cs" t="Include" />
+                  <e p="IBrushUIGroup.cs" t="Include" />
+                  <e p="IPaintContextRender.cs" t="Include" />
+                </e>
+                <e p="CloneBrushTool.cs" t="Include" />
+                <e p="Compute" t="Include">
+                  <e p="Advection.compute" t="Include" />
+                  <e p="Aeolian.compute" t="Include" />
+                  <e p="Aspect.compute" t="Include" />
+                  <e p="ComputeUtility.cs" t="Include" />
+                  <e p="Concavity.compute" t="Include" />
+                  <e p="Diffusion.compute" t="Include" />
+                  <e p="Height.compute" t="Include" />
+                  <e p="Hydraulic.compute" t="Include" />
+                  <e p="ImageUtility.compute" t="Include" />
+                  <e p="Projection.compute" t="Include" />
+                  <e p="Slope.compute" t="Include" />
+                  <e p="Thermal.compute" t="Include" />
+                </e>
+                <e p="ContrastTool.cs" t="Include" />
+                <e p="Erosion" t="Include">
+                  <e p="Eroder.cs" t="Include" />
+                  <e p="ErosionUtility.cs" t="Include" />
+                  <e p="HydraulicEroder.cs" t="Include" />
+                  <e p="HydraulicErosionSettings.cs" t="Include" />
+                  <e p="ThermalEroder.cs" t="Include" />
+                  <e p="WindEroder.cs" t="Include" />
+                </e>
+                <e p="FilterStack" t="Include">
+                  <e p="AbsFilter.cs" t="Include" />
+                  <e p="AddFilter.cs" t="Include" />
+                  <e p="AspectFilter.cs" t="Include" />
+                  <e p="BlurFilter.cs" t="Include" />
+                  <e p="ClampFilter.cs" t="Include" />
+                  <e p="ComplementFilter.cs" t="Include" />
+                  <e p="ConcavityFilter.cs" t="Include" />
+                  <e p="Editor" t="Include">
+                    <e p="FilterStackEditor.cs" t="Include" />
+                    <e p="Images" t="Include" />
+                  </e>
+                  <e p="Filter.cs" t="Include" />
+                  <e p="FilterContext.cs" t="Include" />
+                  <e p="FilterStack.cs" t="Include" />
+                  <e p="FilterStackView.cs" t="Include" />
+                  <e p="FilterUtility.cs" t="Include" />
+                  <e p="HeightFilter.cs" t="Include" />
+                  <e p="MaxFilter.cs" t="Include" />
+                  <e p="MinFilter.cs" t="Include" />
+                  <e p="MultiplyFilter.cs" t="Include" />
+                  <e p="NegateFilter.cs" t="Include" />
+                  <e p="NoiseFilter.cs" t="Include" />
+                  <e p="PowerFilter.cs" t="Include" />
+                  <e p="RemapFilter.cs" t="Include" />
+                  <e p="Shaders" t="Include">
+                    <e p="BlendModes.shader" t="Include" />
+                    <e p="Blur.shader" t="Include" />
+                    <e p="Filters.shader" t="Include" />
+                  </e>
+                  <e p="SlopeFilter.cs" t="Include" />
+                </e>
+                <e p="GUI" t="Include">
+                  <e p="TerrainToolGUIHelper.cs" t="Include" />
+                </e>
+                <e p="HydroErosion.cs" t="Include" />
+                <e p="NoiseFillShaderGenerator.cs" t="Include" />
+                <e p="NoiseHeightTool.cs" t="Include" />
+                <e p="NoiseLib" t="Include">
+                  <e p="API" t="Include">
+                    <e p="DimensionFlags.cs" t="Include" />
+                    <e p="FractalType.cs" t="Include" />
+                    <e p="GeneratedShaderInfo.cs" t="Include" />
+                    <e p="HlslDescriptions.cs" t="Include" />
+                    <e p="NoiseLib.cs" t="Include" />
+                    <e p="NoiseShaderGenerator.cs" t="Include" />
+                    <e p="NoiseTemplateImporter.cs" t="Include" />
+                    <e p="NoiseType.cs" t="Include" />
+                    <e p="NoiseUtils.cs" t="Include" />
+                  </e>
+                  <e p="BillowNoise.cs" t="Include" />
+                  <e p="Editor" t="Include">
+                    <e p="ExportNoiseGUI.cs" t="Include" />
+                    <e p="ExportNoiseWindow.cs" t="Include" />
+                    <e p="NoiseEditorView.cs" t="Include" />
+                    <e p="NoiseFieldView.cs" t="Include" />
+                    <e p="NoiseWindow.cs" t="Include" />
+                  </e>
+                  <e p="FbmFractalType.cs" t="Include" />
+                  <e p="NoiseBlitShaderGenerator.cs" t="Include" />
+                  <e p="NoiseComponent.cs" t="Include" />
+                  <e p="NoiseComponentEditor.cs" t="Include" />
+                  <e p="NoiseSettings.cs" t="Include" />
+                  <e p="NoiseSettingsAssetEditor.cs" t="Include" />
+                  <e p="NoiseSettingsFactory.cs" t="Include" />
+                  <e p="NoiseSettingsGUI.cs" t="Include" />
+                  <e p="NoneFractalType.cs" t="Include" />
+                  <e p="PerlinNoise.cs" t="Include" />
+                  <e p="RidgeNoise.cs" t="Include" />
+                  <e p="StrataFractalType.cs" t="Include" />
+                  <e p="Styles" t="Include">
+                    <e p="Noise_Dark.uss" t="Include" />
+                    <e p="Noise_Light.uss" t="Include" />
+                  </e>
+                  <e p="ValueNoise.cs" t="Include" />
+                  <e p="VoronoiNoise.cs" t="Include" />
+                </e>
+                <e p="PaintHeightTool.cs" t="Include" />
+                <e p="PaintHolesTool.cs" t="Include" />
+                <e p="PaintTextureTool.cs" t="Include" />
+                <e p="PinchHeight.cs" t="Include" />
+                <e p="RTHandleCollection.cs" t="Include" />
+                <e p="SetHeightTool.cs" t="Include" />
+                <e p="SharpenPeaksTool.cs" t="Include" />
+                <e p="SlopeFlattenTool.cs" t="Include" />
+                <e p="SmoothHeightTool.cs" t="Include" />
+                <e p="SmudgeHeight.cs" t="Include" />
+                <e p="StampTool.cs" t="Include" />
+                <e p="TerraceErosion.cs" t="Include" />
+                <e p="TerrainFillUtility.cs" t="Include" />
+                <e p="TerrainToolUtility.cs" t="Include" />
+                <e p="ThermalErosionTool.cs" t="Include" />
+                <e p="TwistHeight.cs" t="Include" />
+                <e p="WindErosionTool.cs" t="Include" />
+              </e>
+              <e p="Unity.TerrainTools.Editor.asmdef" t="Include" />
+            </e>
+            <e p="ExampleAssets" t="Include">
+              <e p="NoiseSettings" t="Include" />
+            </e>
+            <e p="package.json" t="Include" />
+            <e p="Runtime" t="Include">
+              <e p="TerrainToolbox" t="Include">
+                <e p="TerrainGroup.cs" t="Include" />
+              </e>
+              <e p="Unity.TerrainTools.asmdef" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="BrushPreview.shader" t="Include" />
+              <e p="CloneBrush.shader" t="Include" />
+              <e p="ContrastHeight.shader" t="Include" />
+              <e p="Generated" t="Include">
+                <e p="NoiseBlitFbm.shader" t="Include" />
+                <e p="NoiseBlitNone.shader" t="Include" />
+                <e p="NoiseBlitStrata.shader" t="Include" />
+                <e p="NoiseFillFbm.shader" t="Include" />
+                <e p="NoiseFillNone.shader" t="Include" />
+                <e p="NoiseFillStrata.shader" t="Include" />
+              </e>
+              <e p="MeshUtility.shader" t="Include" />
+              <e p="NoiseFill.shader" t="Include" />
+              <e p="NoiseHeightTool.shader" t="Include" />
+              <e p="NoiseLib" t="Include">
+                <e p="Fbm" t="Include">
+                  <e p="Billow.hlsl" t="Include" />
+                  <e p="Perlin.hlsl" t="Include" />
+                  <e p="Ridge.hlsl" t="Include" />
+                  <e p="Value.hlsl" t="Include" />
+                  <e p="Voronoi.hlsl" t="Include" />
+                </e>
+                <e p="Implementation" t="Include">
+                  <e p="BillowImpl.hlsl" t="Include" />
+                  <e p="PerlinImpl.hlsl" t="Include" />
+                  <e p="RidgeImpl.hlsl" t="Include" />
+                  <e p="ValueImpl.hlsl" t="Include" />
+                  <e p="VoronoiImpl.hlsl" t="Include" />
+                </e>
+                <e p="Noise.hlsl" t="Include" />
+                <e p="NoiseCommon.hlsl" t="Include" />
+                <e p="NoiseImpl.hlsl" t="Include" />
+                <e p="NoisePreview.shader" t="Include" />
+                <e p="None" t="Include">
+                  <e p="Billow.hlsl" t="Include" />
+                  <e p="Perlin.hlsl" t="Include" />
+                  <e p="Ridge.hlsl" t="Include" />
+                  <e p="Value.hlsl" t="Include" />
+                  <e p="Voronoi.hlsl" t="Include" />
+                </e>
+                <e p="Preview.shader" t="Include" />
+                <e p="Strata" t="Include">
+                  <e p="Billow.hlsl" t="Include" />
+                  <e p="Perlin.hlsl" t="Include" />
+                  <e p="Ridge.hlsl" t="Include" />
+                  <e p="Value.hlsl" t="Include" />
+                  <e p="Voronoi.hlsl" t="Include" />
+                </e>
+                <e p="Templates" t="Include" />
+              </e>
+              <e p="PaintAspect.shader" t="Include" />
+              <e p="PaintConcavity.shader" t="Include" />
+              <e p="PaintHeight.shader" t="Include" />
+              <e p="PaintMaterialBrushPreview.shader" t="Include" />
+              <e p="PaintTexture.shader" t="Include" />
+              <e p="PinchHeight.shader" t="Include" />
+              <e p="SedimentSplat.shader" t="Include" />
+              <e p="SetExactHeight.shader" t="Include" />
+              <e p="SharpenPeaks.shader" t="Include" />
+              <e p="SimpleHeightBlend.shader" t="Include" />
+              <e p="SlopeFlatten.shader" t="Include" />
+              <e p="SmoothHeight.shader" t="Include" />
+              <e p="SmudgeHeight.shader" t="Include" />
+              <e p="Templates" t="Include" />
+              <e p="TerraceErosion.shader" t="Include" />
+              <e p="TerrainToolHeightBlit.shader" t="Include" />
+              <e p="TerrainTools.hlsl" t="Include" />
+              <e p="TexelValidity.shader" t="Include" />
+              <e p="TwistHeight.shader" t="Include" />
+              <e p="Visualization" t="Include">
+                <e p="BuiltIn" t="Include">
+                  <e p="BLT_TerrainVisualization.shader" t="Include" />
+                  <e p="BLT_TerrainVisualizationCommon.cginc" t="Include" />
+                </e>
+                <e p="HDRP" t="Include">
+                  <e p="HDRP_TerrainVisualizationData.hlsl" t="Include" />
+                  <e p="HDRP_TerrainVisualizationTemplate.hlsl" t="Include" />
+                </e>
+                <e p="URP" t="Include">
+                  <e p="URP_TerrainVisualizationInput.hlsl" t="Include" />
+                  <e p="URP_TerrainVisualizationLitPass.hlsl" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Tests" t="Include">
+              <e p="Editor" t="Include">
+                <e p="NoiseTests.shader" t="Include" />
+                <e p="PlaybackData" t="Include">
+                  <e p="Logo.txt" t="Include" />
+                  <e p="NoiseHeightHistory.txt" t="Include" />
+                  <e p="PaintHeightHistory.txt" t="Include" />
+                  <e p="PaintHeightHistory_Null.txt" t="Include" />
+                  <e p="PaintHeightHistoryW.txt" t="Include" />
+                  <e p="PaintHistory_Null.txt" t="Include" />
+                  <e p="PaintTextureHistory.txt" t="Include" />
+                  <e p="SculptToolHistory.txt" t="Include" />
+                  <e p="SetHeightHistory.txt" t="Include" />
+                  <e p="SmileHistory.txt" t="Include" />
+                  <e p="StampHistory.txt" t="Include" />
+                  <e p="StampToolHistory.txt" t="Include" />
+                  <e p="VerticalZigzag.txt" t="Include" />
+                  <e p="VerticalZigzagHistory.txt" t="Include" />
+                </e>
+                <e p="Unity.TerrainTools.Editor.Tests.asmdef" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="com.unity.test-framework@1.1.31" t="Include">
             <e p="package.json" t="Include" />
             <e p="UnityEditor.TestRunner" t="Include">
@@ -7839,6 +8369,8 @@
       <e p="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" t="IncludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
       <e p="UniRx.csproj" t="IncludeRecursive" />
+      <e p="Unity.Animation.Rigging.csproj" t="IncludeRecursive" />
+      <e p="Unity.Animation.Rigging.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Burst.CodeGen.csproj" t="IncludeRecursive" />
       <e p="Unity.Burst.csproj" t="IncludeRecursive" />
       <e p="Unity.Burst.Editor.csproj" t="IncludeRecursive" />
@@ -7881,6 +8413,9 @@
       <e p="Unity.ShaderGraph.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.ShaderGraph.Editor.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.ShaderGraph.Utilities.csproj" t="IncludeRecursive" />
+      <e p="Unity.TerrainTools.csproj" t="IncludeRecursive" />
+      <e p="Unity.TerrainTools.Editor.csproj" t="IncludeRecursive" />
+      <e p="Unity.TerrainTools.Editor.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.TextMeshPro.csproj" t="IncludeRecursive" />
       <e p="Unity.TextMeshPro.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.TextMeshPro.Editor.Tests.csproj" t="IncludeRecursive" />

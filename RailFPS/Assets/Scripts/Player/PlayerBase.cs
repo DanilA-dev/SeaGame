@@ -1,4 +1,5 @@
 ﻿using Interfaces;
+using Player.Combat;
 using StageSystem;
 using UniRx;
 using UnityEngine;
@@ -46,7 +47,7 @@ namespace Player
         private void Awake()
         {
             _currentHealth = _health;
-            _playerRailMovement.Init(_animator);
+            _playerRailMovement.Init(_animator, _combatHandler);
             _combatHandler.Init(_animator);
 
             MessageBroker.Default.Receive<PlayerHealSignal>()

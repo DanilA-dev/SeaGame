@@ -1,25 +1,52 @@
+using Player.Combat;
 using StageSystem;
 using UnityEngine;
 
 public class WeaponSway : MonoBehaviour
 {
-    [Header("Sway Settings")]
-    [SerializeField] private float _smooth;
-    [SerializeField] private float _multiplier;
+    [SerializeField] private PlayerCombatHandler _playerCombatHandler;
+    [SerializeField] private Transform _lookPoint;
+    [SerializeField] private Vector2 _minMaxX;
+    [SerializeField] private Vector2 _minMaxY;
+    [SerializeField] private float _rotateSpeed;
+
+    private Vector3 _worldPos;
+    private Vector3 _screenPos;
+    private Camera _cam;
+
+    private void Start()
+    {
+        _cam = Camera.main;
+    }
 
     private void Update()
     {
         if(GameHandler.Instance.State != GameState.Playing)
             return;
+        MoveLookPoint();
+
+        Vector3 target = _playerCombatHandler.CombatState == PlayerCombatState.Ready ||
+                         _playerCombatHandler.CombatState == PlayerCombatState.Attacking
+            ? _lookPoint.position
+            : new Vector3(transform.position.x, transform.position.y, transform.position.z + 10);
         
-        float mouseX = Input.GetAxisRaw("Mouse X") * _multiplier;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * _multiplier;
+        RotateWeaponToPoint(target);
+    }
 
-        Quaternion rotationX = Quaternion.AngleAxis(-mouseY, Vector3.right);
-        Quaternion rotationY = Quaternion.AngleAxis(mouseX, Vector3.up);
+    private void RotateWeaponToPoint(Vector3 target)
+    {
+        Vector3 dir = target - transform.position;
+        Quaternion q = Quaternion.LookRotation(dir);
+        q.x = Mathf.Clamp(q.x, _minMaxX.x, _minMaxX.y);
+        q.y = Mathf.Clamp(q.y, _minMaxY.x, _minMaxY.y);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, q, _rotateSpeed * Time.deltaTime);
+    }
 
-        Quaternion targetRotation = rotationX * rotationY;
-
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, _smooth * Time.deltaTime);
+    private void MoveLookPoint()
+    {
+        _screenPos = Input.mousePosition;
+        _screenPos.z = _cam.nearClipPlane + 10;
+        _worldPos = _cam.ScreenToWorldPoint(_screenPos);
+        _lookPoint.position = _worldPos;
     }
 }

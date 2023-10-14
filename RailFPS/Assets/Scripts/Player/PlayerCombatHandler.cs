@@ -6,10 +6,22 @@ using StageSystem;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Player
+namespace Player.Combat
 {
+
+    public enum PlayerCombatState
+    {
+        None = 0,
+        Disarmed = 1,
+        Ready = 2,
+        Attacking = 3,
+        Reloading = 4
+    }
+    
     public class PlayerCombatHandler : MonoBehaviour
     {
+        [SerializeField] private PlayerCombatState _combatState;
+        
         [Header("GunSettings")] 
         [SerializeField] private float _damage;
         [SerializeField] private float _range;
@@ -40,6 +52,8 @@ namespace Player
 
         private readonly int _reloadHash = Animator.StringToHash("Reload");
 
+        public PlayerCombatState CombatState => _combatState;
+
         public void Init(Animator animator)
         {
             _cam = Camera.main;
@@ -47,6 +61,7 @@ namespace Player
             _animator = animator;
             _currentAmmoCount = _ammoCount;
             _currentReloadTime = _reloadTime;
+            ChangeCombatState(PlayerCombatState.Ready);
         }
         
         private void Update()
@@ -58,15 +73,19 @@ namespace Player
             {
                 Shoot();
             }
-            
-            if(Input.GetMouseButtonUp(0))
+
+            if (Input.GetMouseButtonUp(0))
+            {
                 _muzzleParticle.Stop();
+                if(_combatState != PlayerCombatState.Reloading)
+                    ChangeCombatState(PlayerCombatState.Ready);
+            }
 
             if (_currentAmmoCount <= 0)
             {
-                if (!_isReloading)
+                if (_combatState != PlayerCombatState.Reloading)
                 {
-                    _isReloading = true;
+                    ChangeCombatState(PlayerCombatState.Reloading);
                     PlayReloadSound();
                     _animator.SetTrigger(_reloadHash);
                 }
@@ -74,7 +93,7 @@ namespace Player
                     _currentReloadTime -= Time.deltaTime;
                 else
                 {
-                    _isReloading = false;
+                    ChangeCombatState(PlayerCombatState.Ready);
                     _currentAmmoCount = _ammoCount;
                     _currentReloadTime = _reloadTime;
                 }
@@ -83,7 +102,7 @@ namespace Player
 
         private void Shoot()
         {
-            if(_isReloading)
+            if(!CanAttack())
                 return;
             
             Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
@@ -94,7 +113,9 @@ namespace Player
             }
 
             _muzzleParticle.Play();
+            ChangeCombatState(PlayerCombatState.Attacking);
             PlayRandomShotSound();
+            _gunPoint.DORewind();
             _gunPoint.DOShakePosition(_shakeTime, _shakeStrength);
             _nextTimeToFire = Time.time + 1f / _rateOfFire;
             _currentAmmoCount--;
@@ -105,6 +126,14 @@ namespace Player
         {
             return new Vector3(Random.Range(_minSpread.x, _maxSpread.x),
                 Random.Range(_minSpread.y, _maxSpread.y), Random.Range(_minSpread.z, _maxSpread.z));
+        }
+
+        private bool CanAttack() =>
+            _combatState == PlayerCombatState.Ready || _combatState == PlayerCombatState.Attacking;
+
+        public void ChangeCombatState(PlayerCombatState newState)
+        {
+            _combatState = newState;
         }
 
         private void PlayRandomShotSound()
